@@ -162,6 +162,7 @@ nav {
 .dropdown:hover .dropbtn .fa-angle-down,
 .dropdown.dropdown-active .dropbtn .fa-angle-down { transform: rotate(180deg); }
 
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -169,17 +170,19 @@ nav {
     left: 50%;
     transform: translateX(-50%);
     min-width: 240px;
-    background: rgba(42, 0, 0, 0.97);
-    border: 1px solid rgba(227,202,175,0.12);
+    background: rgba(42,0,0,0.97);
+    border: 1px solid rgba(227,202,175,.12);
     border-radius: 12px;
-    box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+    box-shadow: 0 16px 40px rgba(0,0,0,.4);
     backdrop-filter: blur(16px);
     overflow: hidden;
     z-index: 100;
     padding: 6px;
 }
 
-.dropdown:hover .dropdown-content { display: block; }
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 
 .dropdown-content .list-dropdown {
     display: flex;
@@ -976,20 +979,48 @@ footer::after {
     .nav-links .list-nav-links .dropbtn:hover { background: rgba(227,202,175,.07); }
 
     /* Dropdown mobile */
-    .dropdown { display: block; width: 100%; }
-    .dropdown:hover .dropdown-content { display: none; }
-    .dropdown .dropdown-content {
-        display: none; position: static;
-        background: rgba(15,0,0,.9);
-        box-shadow: none; backdrop-filter: none;
-        min-width: unset; width: 100%;
-        border-radius: 0; padding: 4px 0;
-    }
-    .dropdown.dropdown-active .dropdown-content { display: block; }
     .dropdown.dropdown-active:hover .dropdown-content { display: block; }
-    .dropdown-content .list-dropdown { padding: 12px 28px; border-radius: 0; }
     .dropbtn .fa-angle-down { transition: transform var(--transition); }
     .dropdown.dropdown-active .dropbtn .fa-angle-down { transform: rotate(180deg); }
+
+
+    .dropdown {
+        display: block;
+        width: 100%;
+        position: relative;
+    }
+    
+    /* Dropdown content di mobile - FULL WIDTH & TIDAK PAKAI TRANSFORM */
+    .dropdown-content {
+        position: static !important;  /* Jadi relative ke parent */
+        left: 0 !important;
+        transform: none !important;   /* Hilangkan transform */
+        width: 100% !important;       /* Full width */
+        min-width: unset !important;
+        background: rgba(15,0,0,.9);
+        box-shadow: none;
+        backdrop-filter: none;
+        border-radius: 0;
+        padding: 4px 0;
+        margin: 0;
+    }
+    
+    /* Dropdown toggle untuk mobile */
+    .dropdown:hover .dropdown-content {
+        display: none;  /* Disable hover di mobile */
+    }
+    
+    .dropdown.dropdown-active .dropdown-content {
+        display: block !important;  /* Show saat diklik */
+    }
+    
+    /* List item di dalam dropdown */
+    .dropdown-content .list-dropdown {
+        padding: 12px 28px;
+        border-radius: 0;
+        width: 100%;
+    }
+
 
     /* Search mobile */
     .search-container {
