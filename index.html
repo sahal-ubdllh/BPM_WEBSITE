@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="assets/logobpm.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>BPM FT UNMA</title>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     NAVBAR
+═══════════════════════════════════════════ -->
+<header id="main-header">
+    <nav>
+        <div class="logo-container">
+            <a href="index.html" class="logo">
+                <img src="./assets/logobpm.png" alt="Logo BPM">
+            </a>
+            <div class="text">
+                <h1>BADAN PERWAKILAN MAHASISWA</h1>
+                <h2>FAKULTAS TEKNIK UNIVERSITAS MAJALENGKA</h2>
+            </div>
+        </div>
+
+        <ul class="nav-links">
+            <li class="list-nav-links"><a href="index.html" class="link-item">Beranda</a></li>
+            <li class="list-nav-links"><a href="./page/about.html" class="link-item">Tentang Kami</a></li>
+            <li class="list-nav-links dropdown">
+                <a href="./page/struktur.html" class="dropbtn link-item">
+                    Struktur <i class="fa-solid fa-angle-down"></i>
+                </a>
+                <div class="dropdown-content">
+                    <a href="./page/struktur.html#bph" class="list-dropdown">
+                        <i class="fas fa-users"></i> Badan Pengurus Harian
+                    </a>
+                    <a href="./page/struktur.html#legislasi" class="list-dropdown">
+                        <i class="fas fa-scale-balanced"></i> Komisi Legislasi
+                    </a>
+                    <a href="./page/struktur.html#pengawasan" class="list-dropdown">
+                        <i class="fas fa-eye"></i> Komisi Pengawasan dan Keuangan
+                    </a>
+                    <a href="./page/struktur.html#advokasi" class="list-dropdown">
+                        <i class="fas fa-handshake"></i> Komisi Advokasi dan Aspirasi
+                    </a>
+                    <a href="./page/struktur.html#kominfo" class="list-dropdown">
+                        <i class="fas fa-tower-broadcast"></i> Komisi Komunikasi dan Informasi
+                    </a>
+                </div>
+            </li>
+            <li class="list-nav-links"><a href="./page/aspirasi.html" class="link-item">Aspirasi</a></li>
+            <li class="list-nav-links"><a href="./page/galeri.html" class="link-item">Galeri</a></li>
+            <div class="search-container">
+                <input type="search" placeholder="Cari..." class="search-box"/>
+                <button class="search-button"><i class="fas fa-search"></i></button>
+            </div>
+        </ul>
+
+        <div class="burger" aria-expanded="false" aria-label="Toggle menu">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+</header>
+
+<main>
+
+<!-- ═══════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════ -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-badge">
+            <span class="badge-dot"></span>
+            Universitas Majalengka · 2025/2026
+        </div>
+        <h1>BPM FT UNMA</h1>
+        <div class="hero-divider">
+            <span></span>
+            <i class="fas fa-star"></i>
+            <span></span>
+        </div>
+        <h2>Badan Perwakilan Mahasiswa</h2>
+        <h2>Fakultas Teknik Universitas Majalengka</h2>
+        <p>"Satu Langkah Bersama Mahasiswa"</p>
+        <div class="hero-cta">
+            <a href="./page/aspirasi.html" class="btn-primary">
+                <i class="fas fa-comment-dots"></i> Sampaikan Aspirasi
+            </a>
+            <a href="./page/about.html" class="btn-secondary">
+                Tentang Kami <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+    <div class="hero-scroll">
+        <span>Scroll</span>
+        <div class="hero-scroll-line"></div>
+    </div>
+    <div class="hero-stats">
+        <div class="hero-stat-item">
+            <strong>4</strong>
+            <span>Komisi Aktif</span>
+        </div>
+        <div class="hero-stat-item">
+            <strong>2025/2026</strong>
+            <span>Periode</span>
+        </div>
+        <div class="hero-stat-item">
+            <strong>FT</strong>
+            <span>Fakultas Teknik</span>
+        </div>
+        <div class="hero-stat-item">
+            <strong>UNMA</strong>
+            <span>Universitas Majalengka</span>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     ABOUT
+═══════════════════════════════════════════ -->
+<section class="about">
+
+    <!-- Tentang BPM -->
+    <div class="about-header">
+        <span class="section-label">Mengenal Kami</span>
+        <h1>Badan Perwakilan Mahasiswa</h1>
+        <div class="section-divider"></div>
+    </div>
+
+    <div class="about-main">
+        <div class="about-logo-wrap">
+            <div class="about-logo-ring">
+                <img src="./assets/logobpm.png" alt="Logo BPM">
+            </div>
+            <div class="about-logo-deco"></div>
+        </div>
+        <div class="about-text">
+            <p>Badan Perwakilan Mahasiswa bertujuan untuk menjadi lembaga perwakilan mahasiswa yang menjalankan fungsi legislasi, pengawasan, dan penyaluran aspirasi mahasiswa guna mewujudkan kehidupan kemahasiswaan yang demokratis, transparan, dan berlandaskan konstitusi mahasiswa.</p>
+            <a href="./page/about.html" class="btn-about">
+                Selengkapnya <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Visi & Misi -->
+    <div class="about-header" style="margin-top: 70px;">
+        <span class="section-label">Arah Gerak Kami</span>
+        <h1>Visi &amp; Misi</h1>
+        <div class="section-divider"></div>
+    </div>
+
+    <div class="visimisi-grid">
+        <!-- Visi -->
+        <div class="vm-card vm-visi">
+            <div class="vm-icon"><i class="fas fa-eye"></i></div>
+            <h3>Visi</h3>
+            <p>"Mewujudkan Badan Perwakilan Mahasiswa Fakultas Teknik sebagai lembaga legislatif yang aspiratif, transparan, kolaboratif, serta berintegritas dalam mengawasi kebijakan organisasi kemahasiswaan"</p>
+        </div>
+        <!-- Misi -->
+        <div class="vm-card vm-misi">
+            <div class="vm-icon"><i class="fas fa-bullseye"></i></div>
+            <h3>Misi</h3>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> Menjadi wadah aspirasi mahasiswa melalui forum, survei, dan kanal komunikasi terbuka.</li>
+                <li><i class="fas fa-check-circle"></i> Membangun sistem pelaporan kinerja BPM yang transparan, akuntabel, dan mudah diakses.</li>
+                <li><i class="fas fa-check-circle"></i> Meningkatkan sinergi dan kolaborasi dengan Senat Mahasiswa serta Himpunan Mahasiswa.</li>
+                <li><i class="fas fa-check-circle"></i> Melaksanakan fungsi legislasi dan pengawasan dengan menjunjung tinggi integritas.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Fungsi Cards -->
+    <div class="about-header" style="margin-top: 70px;">
+        <span class="section-label">Apa yang Kami Lakukan</span>
+        <h1>Fungsi Utama</h1>
+        <div class="section-divider"></div>
+    </div>
+
+    <div class="fungsi-grid">
+        <div class="fungsi-card">
+            <div class="fungsi-icon"><i class="fas fa-scale-balanced"></i></div>
+            <h4>Legislasi</h4>
+            <p>Menyusun dan mengesahkan aturan kemahasiswaan yang berkeadilan.</p>
+        </div>
+        <div class="fungsi-card">
+            <div class="fungsi-icon"><i class="fas fa-shield-halved"></i></div>
+            <h4>Pengawasan</h4>
+            <p>Mengawasi kinerja dan kebijakan organisasi kemahasiswaan.</p>
+        </div>
+        <div class="fungsi-card">
+            <div class="fungsi-icon"><i class="fas fa-comments"></i></div>
+            <h4>Aspirasi</h4>
+            <p>Menampung dan menyalurkan suara mahasiswa kepada pihak fakultas.</p>
+        </div>
+        <div class="fungsi-card">
+            <div class="fungsi-icon"><i class="fas fa-handshake"></i></div>
+            <h4>Advokasi</h4>
+            <p>Membela dan memperjuangkan hak-hak mahasiswa secara aktif.</p>
+        </div>
+    </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer>
+    <div class="footer-top">
+        <div class="footer-brand">
+            <img src="./assets/logobpm.png" alt="Logo BPM" class="footer-logo">
+            <div class="footer-brand-text">
+                <h3>BPM FT UNMA</h3>
+                <p>Badan Perwakilan Mahasiswa<br>Fakultas Teknik Universitas Majalengka</p>
+            </div>
+        </div>
+        <div class="footer-tagline">
+            <span>"Satu Langkah Bersama Mahasiswa"</span>
+        </div>
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-main">
+        <!-- Alamat -->
+        <div class="footer-col">
+            <h4><i class="fas fa-location-dot"></i> Alamat</h4>
+            <p>Gedung Fakultas Teknik<br>Universitas Majalengka<br>Jl. KH. Abdul Halim No. 103,<br>Majalengka, Jawa Barat 45418</p>
+            <a href="https://maps.app.goo.gl/YLWzgehLRq5iLAmTA" target="_blank" class="footer-map-link">
+                <i class="fas fa-map"></i> Lihat di Maps
+            </a>
+        </div>
+
+        <!-- Navigasi -->
+        <div class="footer-col">
+            <h4><i class="fas fa-sitemap"></i> Navigasi</h4>
+            <ul class="footer-nav">
+                <li><a href="index.html"><i class="fas fa-chevron-right"></i> Beranda</a></li>
+                <li><a href="./page/about.html"><i class="fas fa-chevron-right"></i> Tentang Kami</a></li>
+                <li><a href="./page/struktur.html"><i class="fas fa-chevron-right"></i> Struktur Organisasi</a></li>
+                <li><a href="./page/aspirasi.html"><i class="fas fa-chevron-right"></i> Aspirasi</a></li>
+                <li><a href="./page/galeri.html"><i class="fas fa-chevron-right"></i> Galeri</a></li>
+            </ul>
+        </div>
+
+        <!-- Kontak & Sosmed -->
+        <div class="footer-col">
+            <h4><i class="fas fa-envelope"></i> Kontak</h4>
+            <div class="footer-contact-item">
+                <i class="fas fa-envelope-open-text"></i>
+                <span>bpmft20252026@gmail.com</span>
+            </div>
+            <div class="footer-contact-item">
+                <i class="fas fa-phone"></i>
+                <span>+62 838-2469-4692</span>
+            </div>
+
+            <h4 style="margin-top: 24px;"><i class="fas fa-share-nodes"></i> Media Sosial</h4>
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/bpm_ftunma/" class="social-btn instagram" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-btn twitter" aria-label="Twitter/X">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a href="#" class="social-btn facebook" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 Badan Perwakilan Mahasiswa Fakultas Teknik UNMA. All Rights Reserved.</p>
+        <p class="footer-made">Dibuat dengan <i class="fas fa-heart"></i> untuk mahasiswa</p>
+    </div>
+</footer>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

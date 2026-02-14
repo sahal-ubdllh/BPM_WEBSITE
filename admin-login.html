@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous"/>
+    <title>Login Admin - BPM FT UNMA</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #550000 0%, #3a0000 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .login-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            max-width: 900px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .login-left {
+            background: linear-gradient(135deg, #550000, #6e0000);
+            color: white;
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .login-left h1 {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        .login-left p {
+            opacity: 0.9;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .login-logo {
+            width: 100px;
+            height: 100px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            margin-bottom: 30px;
+        }
+
+        .login-right {
+            padding: 60px 40px;
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .login-header h2 {
+            font-size: 28px;
+            color: #550000;
+            margin-bottom: 8px;
+        }
+
+        .login-header p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #550000;
+            box-shadow: 0 0 0 3px rgba(85,0,0,0.1);
+        }
+
+        .password-wrapper {
+            position: relative;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #999;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #550000, #6e0000);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(85,0,0,0.3);
+        }
+
+        .btn-login:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .divider {
+            text-align: center;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .divider::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            height: 1px;
+            background: #e0e0e0;
+        }
+
+        .divider span {
+            background: white;
+            padding: 0 16px;
+            position: relative;
+            color: #999;
+            font-size: 13px;
+        }
+
+        .btn-google {
+            width: 100%;
+            padding: 14px;
+            background: white;
+            color: #333;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-google:hover {
+            border-color: #550000;
+            background: #f5f5f5;
+        }
+
+        .error-message {
+            background: #ffebee;
+            color: #c62828;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .login-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .login-left {
+                padding: 40px 30px;
+            }
+            
+            .login-right {
+                padding: 40px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-left">
+            <div class="login-logo">
+                <i class="fas fa-shield-halved"></i>
+            </div>
+            <h1>Dashboard Admin</h1>
+            <p>Sistem Manajemen Aspirasi Mahasiswa</p>
+            <p style="margin-top: 20px; font-size: 12px; opacity: 0.7;">
+                Login khusus untuk pengurus BPM FT UNMA. Pastikan Anda memiliki akses admin.
+            </p>
+        </div>
+
+        <div class="login-right">
+            <div class="login-header">
+                <h2>Selamat Datang</h2>
+                <p>Silakan login untuk mengakses dashboard</p>
+            </div>
+
+            <div id="error-message" class="error-message"></div>
+
+            <form id="login-form">
+                <div class="form-group">
+                    <label class="form-label">Email Admin</label>
+                    <input type="email" class="form-input" id="email" placeholder="admin@bpmftunma.ac.id" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" class="form-input" id="password" placeholder="••••••••" required>
+                        <i class="fas fa-eye toggle-password" onclick="togglePassword()"></i>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-login" id="btn-login">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </button>
+            </form>
+
+            <div class="divider">
+                <span>atau</span>
+            </div>
+
+            <button class="btn-google" id="btn-google">
+                <i class="fab fa-google"></i> Login dengan Google
+            </button>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js';
+        import { 
+            getAuth, 
+            signInWithEmailAndPassword,
+            signInWithPopup,
+            GoogleAuthProvider,
+            setPersistence,
+            browserLocalPersistence
+        } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
+
+        // Firebase config - SAMA seperti di file lain
+        const firebaseConfig = {
+            apiKey: "AIzaSyD2_02HezN7tZkllerHpm2KPfmguHgUhMM",
+            authDomain: "bpm-ft-unma.firebaseapp.com",
+            projectId: "bpm-ft-unma",
+            storageBucket: "bpm-ft-unma.firebasestorage.app",
+            messagingSenderId: "141447843479",
+            appId: "1:141447843479:web:88ee53b09f88991cc7a3d2",
+            measurementId: "G-B02614GXGS"
+            };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const provider = new GoogleAuthProvider();
+
+        // Set persistence
+        setPersistence(auth, browserLocalPersistence);
+
+        // Check if already logged in
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                // Redirect to dashboard
+                window.location.href = 'admin-dashboard-protected.html';
+            }
+        });
+
+        // Email/Password Login
+        document.getElementById('login-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const btnLogin = document.getElementById('btn-login');
+            const errorMsg = document.getElementById('error-message');
+
+            btnLogin.disabled = true;
+            btnLogin.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Logging in...';
+            errorMsg.classList.remove('show');
+
+            try {
+                await signInWithEmailAndPassword(auth, email, password);
+                // Redirect akan otomatis dari onAuthStateChanged
+            } catch (error) {
+                console.error('Login error:', error);
+                
+                let message = 'Login gagal. ';
+                if (error.code === 'auth/invalid-credential') {
+                    message += 'Email atau password salah.';
+                } else if (error.code === 'auth/user-not-found') {
+                    message += 'Akun tidak ditemukan.';
+                } else if (error.code === 'auth/wrong-password') {
+                    message += 'Password salah.';
+                } else if (error.code === 'auth/too-many-requests') {
+                    message += 'Terlalu banyak percobaan. Coba lagi nanti.';
+                } else {
+                    message += error.message;
+                }
+
+                errorMsg.textContent = message;
+                errorMsg.classList.add('show');
+                
+                btnLogin.disabled = false;
+                btnLogin.innerHTML = '<i class="fas fa-sign-in-alt"></i> Login';
+            }
+        });
+
+        // Google Login
+        document.getElementById('btn-google').addEventListener('click', async () => {
+            const errorMsg = document.getElementById('error-message');
+            errorMsg.classList.remove('show');
+
+            try {
+                await signInWithPopup(auth, provider);
+                // Redirect akan otomatis dari onAuthStateChanged
+            } catch (error) {
+                console.error('Google login error:', error);
+                errorMsg.textContent = 'Google login gagal: ' + error.message;
+                errorMsg.classList.add('show');
+            }
+        });
+
+        // Toggle password visibility
+        window.togglePassword = function() {
+            const passwordInput = document.getElementById('password');
+            const toggleIcon = document.querySelector('.toggle-password');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.classList.remove('fa-eye');
+                toggleIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.classList.remove('fa-eye-slash');
+                toggleIcon.classList.add('fa-eye');
+            }
+        };
+    </script>
+</body>
+</html>
